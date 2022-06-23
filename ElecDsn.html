@@ -24,11 +24,11 @@
                         <a href="Intro.html">Introduction</a>
                         <a href="ElecPro.html">Electronics Production</a>
                         <a href="" class="active">Electronics Design</a>
-                        <a href="">2D Large Format Machining</a>
-                        <a href="">Embedded Programming</a>
-                        <a href="">Molding & Casting</a>
-                        <a href="">3D Machining</a>
-                        <a href="">Interface & Application Programming</a>
+                        <a href="2Dcnc.html">2D Large Format Machining</a>
+                        <a href="Programming.html">Embedded Programming</a>
+                        <a href="MoldCast.html">Molding & Casting</a>
+                        <a href="3Dcnc.html">3D Machining</a>
+                        <a href="Interface.html">Interface & Application Programming</a>
                     </div>
                 </div>
             </div>
@@ -46,42 +46,62 @@
                         Before starting to design the PCB using EAGLE, i have to first download the Fab Lab library from the GitHub repo.
                         <br>I downloaded it into documents > EAGLE > libaries
                     </td>
-                    <td><img src="images/fablbr.JPG" width="500" /></td>
+                    <td><img src="images/fablbr.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>
                         Next i created a new project and new schematic.
                     </td>
-                    <td><img src="images/newproject.JPG" width="500" /></td>
+                    <td><img src="images/newproject.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>
                         Using the add part function, i insert the ATtiny412 chip and all the necessary components (headers, capacitors, resistors, 1x3 pinhead).
                         Using Draw > Net, i connected the circuit accordingly to the schematic.
                     </td>
-                    <td><img src="images/addpart.JPG" width="500" /></td>
+                    <td><img src="images/addpart.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>I named the components and keyed in the values for the resistors and capacitors. After designing the schematic, i switched to designing the board</td>
-                    <td><img src="images/schematic.JPG" width="500" /></td>
+                    <td><img src="images/schematic.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>
                         I arranged the components accordingly afer thet,using the "route" command and setting the line with to 16, i connected the components together.
                         <br><br>After connecting the components, i used the miter command to round off the corners. lastly, i go to Tools > DRC > Check to check for any errors.
                     </td>
-                    <td><img src="images/board.JPG" width="500" /><img src="images/route.JPG" width="500" /></td>
+                    <td><img src="images/board.jpg" width="400" /><img src="images/route.jpg" width="400" /></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><img src="images/" width="500" /></td>
+                    <td>Off the visibility of the layers except layers 1 & 17 and export the file as an image to obtain the traces required for the g-code.</td>
+                    <td><img src="images/ATtinytrace.JPG" width="400" /></td>
                 </tr>
                 <tr>
-                    <td>Off the visibility of the layers except layers 1 & 17 and export the file as an image to obtain the traces required for the gcode.</td>
-                    <td><img src="images/PCBTrace.png" width="500" /></td>
+                    <td>Open file in gimp to edit the image to prepare it for the mods software to produce the g-code.</td>
+                    <td><img src="images/gimp.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        I imported the images into the mods software to generate the g-code and loaded the g-code file into the Stepcraft software.
+                        This time i used the 20deg X 0.1 mill. Next, i secured the PCB using double sided tape and masking tape and set the X, Y, & Z axis.
+                        After that i can start the milling operation.
+                    </td>
+                    <td><img src="images/ATtinymilling.jpg" width="400" /><img src="images/ATtinyboard.jpg" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        After fabricating the PCB, i started to solder the components to the board.
+                        Firsly, i added a bit of flux to the board then i applied solder to the contacts.
+                        Using tweezers, is positioned the components on the board and melted the solder to secure it to the board.
+                    </td>
+                    <td><img src="images/attiny1.jpg" width="400" /><img src="images/attiny2.jpg" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>Finished ATtiny412</td>
+                    <td><img src="images/attiny.jpg" width="400" /></td>
                 </tr>
             </table>
-            <br><br><br><br><br>
+            <br><br>
 
         </div>
 
