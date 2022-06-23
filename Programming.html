@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Style_Topics.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>FurtherDFAB & Prototyping</h1>
+        </div>
+        <div id="navbar">
+            <div class="topnav" id="myTopnav">
+                <a href="Home.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="Project.html">Module Project</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">
+                        Topics &#128899
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="Intro.html">Introduction</a>
+                        <a href="Programming.html">Electronics Production</a>
+                        <a href="ElecDsn.html">Electronics Design</a>
+                        <a href="2Dcnc.html">2D Large Format Machining</a>
+                        <a href="" class="active">Embedded Programming</a>
+                        <a href="MoldCast.html">Molding & Casting</a>
+                        <a href="3Dcnc.html">3D Machining</a>
+                        <a href="Interface.html">Interface & Application Programming</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="content">
+            <h1>Embedded Programming</h1>
+
+            <h3>Programming the ATtiny412</h3>
+            <br>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        Installing cores to make the microcontroller compatible with the Arduino Software (IDE). Go to SpenceKonde's
+                        repository at github > Installation > copy the URL "http://drazzy.com/package_drazzy.com_index.json".
+                    </td>
+                    <td><img src="images/Emb/installation.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>Paste the URL under Preference > Additional Board Manager URLs in the Arduino IDE.</td>
+                    <td><img src="images/Emb/preference.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>In Boards Manager, search megaTinyCore and install core by SpenceKonde.</td>
+                    <td><img src="images/Emb/manager.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>In Tools > Board > megaTinyCore > "ATtiny412/402/212/202"<br>Clock > 8 MHz internal<br>Programmer > SerialUPDI - SLOW</td>
+                    <td><img src="images/Emb/board.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>When programming, refer to the pin out diagram to find out which arduino pin the push button and LED is connected to. I programmed the following code such that the LED will flash whenever the push button is pressed.</td>
+                    <td><img src="images/Emb/pinOut.JPG" width="400" /><br><img src="images/Emb/code.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td><img src="images/Emb/flash.gif" width="500" /></td>
+                    <td><img src="images/Emb/connection.JPG" width="400" /></td>
+                </tr>
+            </table>
+            <br><br>
+
+        </div>
+
+        <div id="footer">
+            Copyright &copy; 2022 Marcus Chia Jun Hock.
+        </div>
+    </div>
+
+
+    <script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+    </script>
+
+    <script>
+window.onscroll = function() {menuFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function menuFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    </script>
+
+</body>
+</html>
