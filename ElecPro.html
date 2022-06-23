@@ -24,11 +24,11 @@
                         <a href="Intro.html">Introduction</a>
                         <a href="" class="active">Electronics Production</a>
                         <a href="ElecDsn.html">Electronics Design</a>
-                        <a href="">2D Large Format Machining</a>
-                        <a href="">Embedded Programming</a>
-                        <a href="">Molding & Casting</a>
-                        <a href="">3D Machining</a>
-                        <a href="">Interface & Application Programming</a>
+                        <a href="2Dcnc.html">2D Large Format Machining</a>
+                        <a href="Programming.html">Embedded Programming</a>
+                        <a href="MoldCast.html">Molding & Casting</a>
+                        <a href="3Dcnc.html">3D Machining</a>
+                        <a href="Interface.html">Interface & Application Programming</a>
                     </div>
                 </div>
             </div>
@@ -37,14 +37,13 @@
 
         <div id="content">
             <h1>Electronics Production</h1>
-			
+            
             <h3>Process of fabricating the FTDI board & FTDI to UPDI board</h3>
             <br>
-            
             <table style="width:100%">
                 <tr>
                     <td>To fabricate the FTDI board, i first downloaded the <a href="">PCB traces</a> and <a href="">outline</a>.</td>
-                    <td><img src="images/traces.png" width="500" /></td>
+                    <td><img src="images/traces.png" width="400" /></td>
                 </tr>
                 <tr>
                     <td>
@@ -52,30 +51,39 @@
                         programs > open server program > G-code > mill 2D PCB png<br>
                         I set the settings according to whether it is the trace or outline.
                     </td>
-                    <td><img src="images/mods.jpg" width="500" /></td>
+                    <td><img src="images/mods.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>I used double sided tape and masking tape to secure the PCB (FR1) to MDF board on the Stepcraft 420.</td>
-                    <td><img src="images/fr1.jpg" width="500" /></td>
+                    <td><img src="images/fr1.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>I loaded the nc file onto the software (UCCNC).</td>
-                    <td><img src="images/uccnc.jpg" width="500" /></td>
+                    <td><img src="images/uccnc.jpg" width="400" /></td>
                 </tr>
                 <tr>
-                    <td>I used a 0.4mm mill for the traces and 0.8mm mill for the outline. Next, i set the Z-axis using the sensor and the X & Y-axis by positioning the mill on the origin of the PCB using the jog function.</td>
-                    <td><img src="images/tool.gif" width="500" /></td>
+                    <td>I used a 30deg X 0.1 mill for the traces and 0.8mm mill for the outline. Next, i set the Z-axis using the sensor and the X & Y-axis by positioning the mill on the origin of the PCB using the jog function.</td>
+                    <td><img src="images/tool.gif" width="400" /></td>
                 </tr>
                 <tr>
                     <td>While milling the outline of the PCB i realised that there are quite alot of burs at the edges, this is probably because the tool is blunt. Since the burs are only on the outer part of the board, it does not affect the circuit, i just removed the extra copper at the edges afterwards.</td>
-                    <td><img src="images/milling.jpg" width="500" /><img src="images/millingFin.jpg" width="500" /></td>
+                    <td><img src="images/milling.jpg" width="400" /><img src="images/millingFin.jpg" width="400" /></td>
                 </tr>
                 <tr>
                     <td>Completed FTDI board. The process is also repeated for the FDTI to UPDI board.</td>
-                    <td><img src="images/ftdi.jpg" width="500" /></td>
+                    <td><img src="images/ftdi.jpg" width="400" /></td>
                 </tr>
+                <tr>
+                    <td>I acquired the electrical components required for the boards. 
+                    Firstly, i let the soldering iron heat up and ensure that the tip is clean.
+                    Secondly, i applied abit of flux to the contacts, i heated up the pads and applied solder to the board.
+                    Using tweezers, i carefully position the component onto the board while melting the solder.
+                    </td>
+                    <td><img src="images/solder.jpg" width="400" /></td>
+                </tr>
+                
             </table>
-            <br><br><br><br><br>
+            <br><br>
 
         </div>
 
