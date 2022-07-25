@@ -26,7 +26,7 @@
                         <a href="ElecDsn.html">Electronics Design</a>
                         <a href="2Dcnc.html">2D Large Format Machining</a>
                         <a href="Programming.html">Embedded Programming</a>
-                        <a href="" class="active">Molding & Casting</a>
+                        <a href="" class="active">Molding & Casting + 3D Machining</a>
                         <a href="3Dcnc.html">3D Machining</a>
                         <a href="Interface.html">Interface & Application Programming</a>
                     </div>
@@ -36,18 +36,148 @@
 
 
         <div id="content">
-            <h1>Molding & Casting</h1>
+            <h1>Molding & Casting + 3D Machining</h1>
 
-            <h3>...</h3>
+            <h3>This document the process of designing a 3D mould for casting of parts</h3>
             <br>
+            There are two different methods of creating a mould
+            <ol>
+                <li>
+                    Master (3D machining) (+ve hard)<br>
+                    Silicone Mould (-ve soft)<br>
+                    Resin Cast (+ve hard)
+                </li>
+                <li>
+                    Master/Mould (3D machining) (-ve hard)<br>
+                    Cast [silicone] (+ve soft)
+                </li>
+            </ol>
+            Master --> Rigid foam/Blue foam <br>
+            Mould  --> Silicone Rubber RTV 620 <br>
+            Cast   --> Smooth On - Smooth Cast 300 <br><br>
+
+            For this assignment, i will be using the first method to make a resin cast.<br><br>
+
             <table style="width:100%">
                 <tr>
-                    <td></td>
-                    <td><img src="images/" width="400" /></td>
+                    <td>
+                        I decided to cast a gear, so i designed the negative mould for the object to be cast.
+                        Firstly, i created the box for the mould, its dimensions are 80mm x 80mm x 25mm (L x W x H), and the walls are 5mm thick.
+                    </td>
+                    <td><img src="images/mold&cast/box.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Next, I used the Spur Gear Add-ins to create a model of the gear. From there,
+                        i project geometry the gear surface to get the sketch of the gear and extruded it to join with the box.
+                        Lastly, i create some sketches and negative extrusions to add some designs to the gear.
+                    </td>
+                    <td><img src="images/mold&cast/moldDesign.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        After designing the mould in Fusion 360, i changed the workspace from Design to Manufacture.
+                        To create tool paths, i go to 3D > Adaptive Clearing
+                    </td>
+                    <td><img src="images/mold&cast/operation.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Next i select the tool and set the relevant parameters.
+                        The tool i will be using is a 3mm flat end mill.
+                        I set the Maximun Roughing Stepdown to 6mm and Fine Stepdown to 0.3mm
+                    </td>
+                    <td><img src="images/mold&cast/settingpg1.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        After Creating the toolpaths, to get the NC code, i go to Setup > Create NC Program,
+                        from there, select the proper post processor and name the file.
+                    </td>
+                    <td><img src="images/mold&cast/post.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>The post processor for the Stepcraft 420 can be downloaded from here https://cam.autodesk.com/hsmposts .</td>
+                    <td><img src="images/mold&cast/download.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        After downloading the right post processor, i select the post processor from My posts > Local > Import > the file i downloaded.
+                        Click Ok and go to NC Programs > Post Process, and the NC code is created.
+                    </td>
+                    <td><img src="images/mold&cast/postProcessing.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>To comfirm that the toolpaths and nc program are right and to ensure that there is no collision, i ran the simulation.</td>
+                    <td><img src="images/mold&cast/simulate.JPG" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Before milling the mould, i cut the blue foam to a size of 80mm x 80mm and marked the center with a marker.
+                        I also placed double sided tape at the bottom of the foam and stick it securely to the cutting bed.
+                    </td>
+                    <td><img src="images/mold&cast/foam1.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        After changing the tool to the 3mm flat end mill, I loaded the NC file onto the software and set the X & Y, & Z axis to be on the center of the foam.
+                        After that, the program is ready to run.
+                    </td>
+                    <td><img src="images/mold&cast/cnc.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>This is the end product of the master mould.</td>
+                    <td><img src="images/mold&cast/machinedFoam.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Next i prepared the mixture for the silicone, I measured 50 grams of part A and 50 grams of Part B and mixed it together.
+                        The mixture must be stirred gently to ensure that minumum air bubbles are formed. I poured the mixture into the mould slowly.
+                    </td>
+                    <td><img src="images/mold&cast/measureSilicone.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>I left the mould to cure over the weekends.</td>
+                    <td><img src="images/mold&cast/curedMold.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        The silicone mould cannot be removed without damaging the blue foam as i did not created a draft angle during the designing process.
+                        Hence, i have no choice but to break the master mould.
+                    </td>
+                    <td><img src="images/mold&cast/removeFoam.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Next, i start to prepare the mixture for the resin cast<br>
+                        Refering to the MSDS (Material Safety Data Sheet):
+                        <ul>
+                            <li>Working time --> 3 min</li>
+                            <li>Curing time  --> 10 min</li>
+                        </ul>
+                        As the working time is very short, i must do prepare and pour the mixture quickly.
+                    </td>
+                    <td><img src="images/mold&cast/partAB.jfif" width="500" /></td>
                 </tr>
 
+                <tr>
+                    <td>
+                        I measured 50 grams of part A and 45 grams of part B in seperate cups, and mix them for a while and pour it into the moulds.
+                        The mixture was clear at first, as it cures, the resin slowly turns white.
+                    </td>
+                    <td><img src="images/mold&cast/mixing.jfif" width="500" /></td>
+                </tr>
+                <tr>
+                    <td>This the end product of the resin cast.</td>
+                    <td><img src="images/mold&cast/endProduct.jfif" width="500" /></td>
+                </tr>
             </table>
-            <br><br><br><br><br>
+            <br>
+            
+            <iframe src="https://ichat1069.autodesk360.com/shares/public/SH35dfcQT936092f0e43b00d950f87ddf599?mode=embed" width="800" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+            <br>
+            <br>
+            <br>
 
         </div>
 
