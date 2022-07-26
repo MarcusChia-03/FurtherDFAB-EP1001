@@ -26,8 +26,8 @@
                         <a href="ElecDsn.html">Electronics Design</a>
                         <a href="2Dcnc.html">2D Large Format Machining</a>
                         <a href="Programming.html">Embedded Programming</a>
-                        <a href="MoldCast.html">Molding & Casting</a>
-                        <a href="3Dcnc.html">3D Machining</a>
+                        <a href="MoldCast.html">Molding & Casting + 3D Machining</a>
+                        
                         <a href="" class="active">Interface & Application Programming</a>
                     </div>
                 </div>
@@ -38,12 +38,35 @@
         <div id="content">
             <h1>Interface & Application Programming</h1>
 
-            <h3>...</h3>
+            <h3></h3>
             <br>
             <table style="width:100%">
                 <tr>
-                    <td></td>
-                    <td><img src="images/" width="400" /></td>
+                    <td>I got the code for interfacing fron https://processing.org/tutorials/electronics/#controlling-physical-media > code.
+                    I included a Serial.swap(1); to change the Tx & Rx ports to the alternative serial ports (port 2 & 3) as the LED and push button is already connected
+                    to the original serial ports. I added an extra code to off the LED whenever the button is pressed to help me when doing troubleshooting. </td> 
+                    <td><img src="images/interface/arduino.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>I connected the board to the programmer and uploaded the code to the ATtiny412. I pushed the button to check if the code has been successfully uploaded.</td>
+                    <td><img src="images/interface/upload.jfif" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>Next, i put the other code into Processing, another IDE software similar to Arduino IDE. 
+                    I added a "COM12", into "port = new Serial(this, 9600);" to specify the port used.</td>
+                    <td><img src="images/interface/processing.JPG" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        I connected the Tx, Rx, Vcc, & GND pins of the ATtiny412 to the FTDI board and plug it into the USB port. After that, i run the code on the processing.
+                        Initailly, there was an error as it did not detect the board, but after adding the "COM12" i was able to run it. 
+                    </td>
+                    <td><img src="images/interface/interface.jfif" width="400" /></td>
+                </tr>
+                <tr>
+                    <td>I also realised i mixed up the Tx & Rx pins, after swapping the pins, the program works. 
+                    When the button is not press the square is black in colour, but when the button is pressed it changes to grey.</td>
+                    <td><img src="images/interface/button.png" width="400" /></td>
                 </tr>
 
             </table>
