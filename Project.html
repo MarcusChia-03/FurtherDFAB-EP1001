@@ -24,11 +24,11 @@
                         <a href="Intro.html">Introduction</a>
                         <a href="ElecPro.html">Electronics Production</a>
                         <a href="ElecDsn.html">Electronics Design</a>
-                        <a href="">2D Large Format Machining</a>
-                        <a href="">Embedded Programming</a>
-                        <a href="">Molding & Casting</a>
-                        <a href="">3D Machining</a>
-                        <a href="">Interface & Application Programming</a>
+                        <a href="2Dcnc.html">2D Large Format Machining</a>
+                        <a href="Programming.html">Embedded Programming</a>
+                        <a href="MoldCast.html">Molding & Casting + 3D Machining</a>
+                        
+                        <a href="Interface.html">Interface & Application Programming</a>
                     </div>
                 </div>
             </div>
@@ -37,10 +37,296 @@
 
         <div id="content">
             <h1>Module Project</h1>
+            <h3>This documents the process of fabricating the final project</h3>
+            <iframe width="800" height="450"
+                    src="https://www.youtube.com/embed/9s01-VqzENY?autoplay=1&mute=1"></iframe>
+            <img src="images/final/EP1001_Poster.png" width="800" />
+            <h2>Mecanum Wheel Motion</h2>
+            <img src="images/final/Movement.jpg" width="800" /><br><br>
+            <h2>CAD Design</h2>
+            
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <img src="images/final/cadDesign/lasercutparts.JPG" width="500" /><br>
+                        Firstly, i designed the frame of the vehicle,
+                        these are the parts that are to be laser cut.
+                        After designing it, i exported the sketches as dxf file type and
+                        i complied it using inkscape and save it as pdf.
+                    </td>
+                    <td>
+                        <img src="images/final/cadDesign/3dprintparts.JPG" width="500" /><br>
+                        Next are the parts that are to be 3D printed, i exported the part as a stl file
+                        and i sliced it using cura to get the g-code for the 3D printer.<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/cadDesign/side.JPG" width="500" /><br>
+                        For the side panels that are to be fabricated using large format machining,
+                        i exported it as a dxf file type.
+                    </td>
+                    <td>
+                        <img src="images/final/cadDesign/cad.JPG" width="500" /><br>
+                        Next, i designed the mecanum wheel by creating planes at 45 degree,
+                        from there, i can cut out flat surfaces for the rollers,
+                        and using the circular pattern function i patterned the feature 10 times to form the wheel.
+                        I mirrored the wheel to get the wheel for the opposite side.<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/cadDesign/mount.JPG" width="500" /><br>
+                        To connect the wheels to the motors, i designed a mount to hold the wheels.
+                    </td>
+                    <td>
+                        <img src="images/final/cadDesign/frame.JPG" width="500" /><br>
+                        After designing the parts, i assembled it virtually the see how it looks like.<br><br>
+                    </td>
+                </tr>
+            </table><br><br>
+            <h2>Electronics Design</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <img src="images/final/elecDesign/pinout.JPG" width="500" /><br>
+                        For the final project, i will be using the ATtiny1614 microcontroller as it has
+                        11 i/o pins, which is enough for my project. The ATtiny1614 also uses the UPDI programmer
+                        which means i do not need to fabricate another type of programmer (e.g ISP programmer).
+                    </td>
+                    <td>
+                        <img src="images/final/elecDesign/datasheet.JPG" width="500" /><br>
+                        According to the data sheet for the ATtiny1614, the operating supply voltage cannot
+                        exceed 5.5 Volts. I will be using 4 AA battries (total 6 Volts) to power the board
+                        and motors, therefore i need to used a diode to reduce the voltage.<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/elecDesign/circuit.JPG" width="500" /><br>
+                        I downloaded the ATtiny1614 footprint from snapEDA and designed the circuit on Autodesk
+                        Eagle. Other than the 8 outputs required to control the directions of 4 DC motors,
+                        i also added an LED to help with the programming and troubleshooting. I added 2 diodes
+                        to reduce the input voltage for the motors as i feel that the motors are moving too
+                        fast when 6 Volts are applied.
+                    </td>
+                    <td>
+                        <img src="images/final/elecDesign/boarddesign.JPG" width="500" /><br>
+                        After designing the circuit, i arranged the components and connected the wires.
+                        It took me quite a few trys to be able to connect all the connections, i also had to
+                        change some of the wiring.<br><br>
+                    </td>
+                </tr>
+            </table><br><br>
+            <h2>PCB Fabrication & Soldering</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <img src="images/final/soldering/board.jfif" width="500" /><br>
+                        After designing the circuit, i import the PNG file into the mods to generate the g-code
+                        for the Stepcraft 420.
+                    </td>
+                    <td>
+                        <img src="images/final/soldering/board1.jfif" width="500" /><br>
+                        I had to redo the fabrication of the PCB as there are alot of burs and the connections are very thin.<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/soldering/1614flux.jfif" width="500" /><br>
+                        After that, i soldered pinheaders first and then the ATtiny1614.
+                    </td>
+                    <td>
+                        <img src="images/final/soldering/1614.jfif" width="500" /><br>
+                        <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/soldering/battery.jfif" width="500" /><br>
+                        I soldered pinheaders to the wires of the battery holder so that i can add
+                        the switches and voltmeter to it. I made it able to be disconnected so that
+                        it is easier for assembly.
+                    </td>
+                    <td>
+                        <img src="images/final/soldering/voltmeter.jfif" width="500" /><br>
+                        Soldered jumpers to the voltmeter.<br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/soldering/meterandswitch.jfif" width="500" /><br>
+                        Soldered jumper wires to the switch.
+                    </td>
+                    <td>
+                        <img src="images/final/soldering/driver.jfif" width="500" /><br>
+                        I also soldered pinheads and jumper wires to the motor driver and DC motor.<br><br>
+                    </td>
+                </tr>
+            </table><br><br>
+            <h2>Fabrication</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <img src="images/final/fabrication/2dcnc.jfif" width="500" /><br>
+                        To do the large format machining, i import the dxf file into VCarve Pro to generate
+                        the toolpath for the machine to cut out the part. For this part, i used 18mm thick ply wood.
+                    </td>
+                    <td>
+                        <img src="images/final/fabrication/3dprint.jfif" width="500" /><br>
+                        I 3D printed the mecanum wheels and the rollers at 15% infill.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/fabrication/lasercut1.jfif" width="500" /><br>
+                        I opened the PDF file in corel draw and set the line thickness and colour to hairline and red.
+                        And set the laser power to cut 3mm thick acrylic.
+                    </td>
+                    <td>
+                        <img src="images/final/fabrication/lasercut2.jfif" width="500" /><br>
+                    </td>
+                </tr>
 
-            <br><br>...
-            <br><br><br><br><br><br><br><br><br><br>
+            </table><br><br>
+            <h2>Assembly</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <img src="images/final/assembly/bearings.jfif" width="500" /><br>
+                        I fit the bearings into the rollers i 3D printed.
+                    </td>
+                    <td>
+                        <img src="images/final/assembly/wheel.jfif" width="500" /><br>
+                        Next, i secured the rollers to the wheel with screws.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/assembly/wheelv1.jfif" width="500" /><br>
+                        At first, i decided to use the rubber foam tape on the rollers for grip,
+                        but the tape keeps on coming off, hence i decided to use a silicon pipe instead.
+                    </td>
+                    <td>
+                        <img src="images/final/assembly/pipe.jfif" width="500" /><br>
+                        I cut the pipe to the thickness of the roller using a scissors and glued it to the rollers.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/assembly/frame1.jfif" width="500" /><br>
+                        For the frame, i assembled the laser cut parts and 3D printed parts using M3 screws.
+                    </td>
+                    <td>
+                        <img src="images/final/assembly/frame2.jfif" width="500" /><br>
+                        I mounted the DC motors onto it using longer M3 screws.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/assembly/electronics.jfif" width="500" /><br>
+                        Next, i fitted the Microcontroller and all the electronics into the chassis.
+                        I connected the i/o pins to the ATtiny1614 according to the schematic i designed in Eagle.
+                    </td>
+                    <td>
+                        <img src="images/final/assembly/finishassembly.jfif" width="500" /><br>
+                        I connected an extension cable for the programmer.
+                    </td>
+                </tr>
+            </table><br><br>
+            <h2>Programming</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <img src="images/final/program/pin.JPG" width="500" /><br>
+                        Refering to the pinout diagram and the schematic, i named the pins accordingly
+                        (e.g MA1p --> Motor A1 +ve direction). Next i configured the LED as an input
+                        and the motors as outputs. I had to run a program to on the motors to find out the
+                        direction the motors are turning.
+                    </td>
+                    <td>
+                        <img src="images/final/program/Function.JPG" width="500" /><br>
+                        In order for the motor to run, only one of the output of the motor can be turned on at a time.
+                        Hence, i created functions to control the motors.
+                        The function will on one of the outputs and off the other.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="images/final/program/movements.JPG" width="500" /><br>
+                        Using the functions, i programmed the movements for the mecanum wheel vehicle.
+                        Different combinations of direction of the motors will result in different movements.
+                    </td>
+                    <td>
+                        <img src="images/final/program/connection.jfif" width="500" /><br>
+                        After programming, i connected the programmer and PCB to my laptop to upload the program.
+                    </td>
+                </tr>
+            </table><br><br>
 
+            <h2>Bill of Materials</h2>
+            <table style="width:70%">
+                <tr>
+                    <td>No.</td>
+                    <td>Part</td>
+                    <td>Price (each)</td>
+                    <td>Qty.</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>On/Off switch</td>
+                    <td>$1.00</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Battery holder</td>
+                    <td>$2.00</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>DC Motor Driver</td>
+                    <td>$1.35</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>DC Motor</td>
+                    <td>$1.70</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>3*8*4mm Bearings X10pcs</td>
+                    <td>$2.50</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Silicone Hose 1m 10mm diameter (for the wheels)</td>
+                    <td>$3.00</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>2.5V-40V Digital Voltmeter</td>
+                    <td>$1.70</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>3mm Acrylic</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Ply wood 18mm thick</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
         </div>
 
         <div id="footer">
